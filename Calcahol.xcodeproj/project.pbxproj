@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A00B49619DAF071002E566A /* WhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00B49519DAF071002E566A /* WhiskeyViewController.m */; };
 		2A48B23219DA05F8009E2912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B23119DA05F8009E2912 /* main.m */; };
 		2A48B23519DA05F8009E2912 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B23419DA05F8009E2912 /* AppDelegate.m */; };
 		2A48B23819DA05F8009E2912 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B23719DA05F8009E2912 /* ViewController.m */; };
-		2A48B23B19DA05F8009E2912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23919DA05F8009E2912 /* Main.storyboard */; };
 		2A48B23D19DA05F8009E2912 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23C19DA05F8009E2912 /* Images.xcassets */; };
 		2A48B24019DA05F8009E2912 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */; };
 		2A48B24C19DA05F8009E2912 /* CalcaholTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B24B19DA05F8009E2912 /* CalcaholTests.m */; };
@@ -27,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A00B49419DAF071002E566A /* WhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiskeyViewController.h; sourceTree = "<group>"; };
+		2A00B49519DAF071002E566A /* WhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiskeyViewController.m; sourceTree = "<group>"; };
 		2A48B22C19DA05F8009E2912 /* Calcahol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcahol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A48B23019DA05F8009E2912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A48B23119DA05F8009E2912 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -34,7 +36,6 @@
 		2A48B23419DA05F8009E2912 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2A48B23619DA05F8009E2912 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2A48B23719DA05F8009E2912 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2A48B23A19DA05F8009E2912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A48B23C19DA05F8009E2912 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2A48B23F19DA05F8009E2912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2A48B24519DA05F8009E2912 /* CalcaholTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcaholTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +86,8 @@
 				2A48B23419DA05F8009E2912 /* AppDelegate.m */,
 				2A48B23619DA05F8009E2912 /* ViewController.h */,
 				2A48B23719DA05F8009E2912 /* ViewController.m */,
-				2A48B23919DA05F8009E2912 /* Main.storyboard */,
+				2A00B49419DAF071002E566A /* WhiskeyViewController.h */,
+				2A00B49519DAF071002E566A /* WhiskeyViewController.m */,
 				2A48B23C19DA05F8009E2912 /* Images.xcassets */,
 				2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */,
 				2A48B22F19DA05F8009E2912 /* Supporting Files */,
@@ -199,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A48B23B19DA05F8009E2912 /* Main.storyboard in Resources */,
 				2A48B24019DA05F8009E2912 /* LaunchScreen.xib in Resources */,
 				2A48B23D19DA05F8009E2912 /* Images.xcassets in Resources */,
 			);
@@ -220,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A48B23819DA05F8009E2912 /* ViewController.m in Sources */,
+				2A00B49619DAF071002E566A /* WhiskeyViewController.m in Sources */,
 				2A48B23519DA05F8009E2912 /* AppDelegate.m in Sources */,
 				2A48B23219DA05F8009E2912 /* main.m in Sources */,
 			);
@@ -244,14 +246,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2A48B23919DA05F8009E2912 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A48B23A19DA05F8009E2912 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,9 +337,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Calcahol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -353,9 +349,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Calcahol/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -412,6 +410,7 @@
 				2A48B25119DA05F8009E2912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A48B25219DA05F8009E2912 /* Build configuration list for PBXNativeTarget "CalcaholTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +419,7 @@
 				2A48B25419DA05F8009E2912 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
