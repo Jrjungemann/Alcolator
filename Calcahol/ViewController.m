@@ -10,11 +10,9 @@
 
 @interface ViewController () <UITextFieldDelegate>
 
-
 @property (weak, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
 @property (weak, nonatomic) UIButton *calculateButton;
 @property (weak, nonatomic) UILabel *alcoholPercent;
-
 
 @end
 
@@ -70,200 +68,62 @@
     [super viewWillLayoutSubviews];
   
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-   
+    CGFloat viewWidth;
+    CGFloat padding;
+    CGFloat verticalPadding;
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-        if(orientation == 0) {
+        if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
             
-            CGFloat viewWidth = 768;
-            CGFloat padding = 40;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-        
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-        
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(212, bottomOfPercentLabel, 344, itemHeight);
-        
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-    
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-        
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-        
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
+            viewWidth = 768;
+            padding = 40;
+            verticalPadding = 40;
             
-        } else if (orientation == UIInterfaceOrientationPortrait) {
+        } else if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
             
-            CGFloat viewWidth = 768;
-            CGFloat padding = 40;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(212, bottomOfPercentLabel, 344, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-            
-        } else if (orientation == UIInterfaceOrientationLandscapeLeft) {
-            
-            CGFloat viewWidth = 1024;
-            CGFloat padding = 40;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-        
-        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
-            
-            CGFloat viewWidth = 1024;
-            CGFloat padding = 40;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
+            viewWidth = 1024;
+            padding = 40;
+            verticalPadding = 40;
         }
+        
     } else {
-        if (orientation == 0) {
-            CGFloat viewWidth = 320;
-            CGFloat padding = 20;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-        } else if (orientation == UIInterfaceOrientationPortrait) {
-            CGFloat viewWidth = 320;
-            CGFloat padding = 20;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-
-        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
-            
-            CGFloat viewWidth = 568;
-            CGFloat padding = 20;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
         
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-        
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
-        
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField, itemWidth, itemHeight);
-        
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider, itemWidth, itemHeight);
-        
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers, itemWidth, itemHeight);
-        
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel, itemWidth, itemHeight);
-        
-        } else if (orientation == UIInterfaceOrientationLandscapeLeft) {
+        if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
             
-            CGFloat viewWidth = 568;
-            CGFloat padding = 20;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
+            viewWidth = 320;
+            padding = 20;
+            verticalPadding = 20;
             
-            self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
+        } else if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
             
-            CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
-            self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
+            viewWidth = 568;
+            padding = 20;
+            verticalPadding = 0;
             
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField, itemWidth, itemHeight);
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.beersBaby.frame = CGRectMake(padding, bottomOfSlider, itemWidth, itemHeight);
-            
-            CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
-            self.resultLabel.frame = CGRectMake(padding, bottomOfBeers, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel, itemWidth, itemHeight);
         }
     }
+    
+    CGFloat itemWidth = viewWidth - padding - padding;
+    CGFloat itemHeight = 44;
+    
+    self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
+    self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
+    
+    CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
+    self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + verticalPadding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
+    self.beersBaby.frame = CGRectMake(padding, bottomOfSlider + verticalPadding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfBeers = CGRectGetMaxY(self.beersBaby.frame);
+    self.resultLabel.frame = CGRectMake(padding, bottomOfBeers + verticalPadding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfLabel = CGRectGetMaxY(self.resultLabel.frame);
+    self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + verticalPadding, itemWidth, itemHeight);
+    
 }
 
 - (void)didReceiveMemoryWarning {
