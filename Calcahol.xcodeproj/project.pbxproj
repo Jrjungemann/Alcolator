@@ -14,6 +14,7 @@
 		2A48B23D19DA05F8009E2912 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23C19DA05F8009E2912 /* Images.xcassets */; };
 		2A48B24019DA05F8009E2912 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */; };
 		2A48B24C19DA05F8009E2912 /* CalcaholTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B24B19DA05F8009E2912 /* CalcaholTests.m */; };
+		2A5F093119DC38B800D15A13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F093019DC38B800D15A13 /* MainMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		2A48B24519DA05F8009E2912 /* CalcaholTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcaholTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A48B24A19DA05F8009E2912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A48B24B19DA05F8009E2912 /* CalcaholTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcaholTests.m; sourceTree = "<group>"; };
+		2A5F092F19DC38B800D15A13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		2A5F093019DC38B800D15A13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				2A48B23419DA05F8009E2912 /* AppDelegate.m */,
 				2A48B23619DA05F8009E2912 /* ViewController.h */,
 				2A48B23719DA05F8009E2912 /* ViewController.m */,
+				2A5F092F19DC38B800D15A13 /* MainMenuViewController.h */,
+				2A5F093019DC38B800D15A13 /* MainMenuViewController.m */,
 				2A00B49419DAF071002E566A /* WhiskeyViewController.h */,
 				2A00B49519DAF071002E566A /* WhiskeyViewController.m */,
 				2A48B23C19DA05F8009E2912 /* Images.xcassets */,
@@ -224,6 +229,7 @@
 				2A00B49619DAF071002E566A /* WhiskeyViewController.m in Sources */,
 				2A48B23519DA05F8009E2912 /* AppDelegate.m in Sources */,
 				2A48B23219DA05F8009E2912 /* main.m in Sources */,
+				2A5F093119DC38B800D15A13 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

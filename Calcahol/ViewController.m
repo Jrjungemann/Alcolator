@@ -23,6 +23,8 @@
         // Calls the superclass's implementation
         [super viewDidLoad];
         
+        self.title = NSLocalizedString(@"Wine", @"wine");
+        
         // Set our primary view's background color to lightGrayColor
         self.view.backgroundColor = [UIColor whiteColor];
         
@@ -71,17 +73,20 @@
     CGFloat viewWidth;
     CGFloat padding;
     CGFloat verticalPadding;
+    CGFloat topPadding;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
             
+            topPadding = 70;
             viewWidth = 768;
             padding = 40;
             verticalPadding = 40;
             
         } else if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
             
+            topPadding = 35;
             viewWidth = 1024;
             padding = 40;
             verticalPadding = 40;
@@ -91,12 +96,14 @@
         
         if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
             
+            topPadding = 70;
             viewWidth = 320;
             padding = 20;
             verticalPadding = 20;
             
         } else if (orientation == UIInterfaceOrientationLandscapeRight || orientation == UIInterfaceOrientationLandscapeLeft) {
             
+            topPadding = 35;
             viewWidth = 568;
             padding = 20;
             verticalPadding = 0;
@@ -107,7 +114,7 @@
     CGFloat itemWidth = viewWidth - padding - padding;
     CGFloat itemHeight = 44;
     
-    self.alcoholPercent.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
+    self.alcoholPercent.frame = CGRectMake(padding, topPadding, itemWidth, itemHeight);
     
     CGFloat bottomOfPercentLabel = CGRectGetMaxY(self.alcoholPercent.frame);
     self.beerPercentTextField.frame = CGRectMake(padding, bottomOfPercentLabel, itemWidth, itemHeight);
@@ -248,7 +255,8 @@
     
     // generate the result text, and display it on the label
     
-    
+    NSString *resultTitle = [NSString stringWithFormat:NSLocalizedString(@"%.1f Wine %@", nil), numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
+    self.title = resultTitle;
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ %@ as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText, containText,  numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
