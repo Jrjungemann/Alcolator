@@ -210,6 +210,21 @@
     
     NSString *resultBeers = [NSString stringWithFormat:NSLocalizedString(@"%d %@", nil), beerCount, beerCounter];
     
+    int numberOfBeers = self.beerCountSlider.value;
+    int ouncesInOneBeerGlass = 12;  //assume they are 12oz beer bottles
+    
+    float alcoholPercentageOfBeer = [self.beerPercentTextField.text floatValue] / 100;
+    float ouncesOfAlcoholPerBeer = ouncesInOneBeerGlass * alcoholPercentageOfBeer;
+    float ouncesOfAlcoholTotal = ouncesOfAlcoholPerBeer * numberOfBeers;
+    
+    float ouncesInOneWineGlass = 5;  // wine glasses are usually 5oz
+    float alcoholPercentageOfWine = 0.13;  // 13% is average
+    
+    float ouncesOfAlcoholPerWineGlass = ouncesInOneWineGlass * alcoholPercentageOfWine;
+    float numberOfWineGlassesForEquivalentAlcoholAmount = ouncesOfAlcoholTotal / ouncesOfAlcoholPerWineGlass;
+    
+    self.title = [NSString stringWithFormat:NSLocalizedString(@"%.1f Glasses of Wine", nil), numberOfWineGlassesForEquivalentAlcoholAmount];
+    
     self.beersBaby.text = resultBeers;
 }
 
@@ -254,9 +269,6 @@
     }
     
     // generate the result text, and display it on the label
-    
-    NSString *resultTitle = [NSString stringWithFormat:NSLocalizedString(@"%.1f Wine %@", nil), numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
-    self.title = resultTitle;
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ %@ as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText, containText,  numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
