@@ -79,14 +79,14 @@
         
         if (orientation == 0 || orientation == UIInterfaceOrientationPortrait) {
             
-            topPadding = 70;
+            topPadding = 80;
             viewWidth = 768;
             padding = 40;
             verticalPadding = 40;
             
         } else if (orientation == UIInterfaceOrientationLandscapeLeft || orientation == UIInterfaceOrientationLandscapeRight) {
             
-            topPadding = 35;
+            topPadding = 100;
             viewWidth = 1024;
             padding = 40;
             verticalPadding = 40;
