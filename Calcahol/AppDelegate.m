@@ -8,21 +8,33 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "MainMenuViewController.h"
+#import "WhiskeyViewController.h"
+#import "AnalyticsResponder.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) AnalyticsResponder *analyticsResponder;
 
 @end
 
 @implementation AppDelegate
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@"%@", viewController.title);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
+    self.analyticsResponder = [AnalyticsResponder new];
     // Override point for customization after application launch.
-    MainMenuViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-    self.window.rootViewController = navigationController;
+    ViewController *wineVC = [[ViewController alloc] init];
+    WhiskeyViewController *whiskeyVC = [[WhiskeyViewController alloc] init];
+    wineVC.delegate = self.analyticsResponder;
+    whiskeyVC.delegate = self.analyticsResponder;
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    tabBarVC.delegate = self;
+    self.window.rootViewController = tabBarVC;
    
     [self.window makeKeyAndVisible];
     

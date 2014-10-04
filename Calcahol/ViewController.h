@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class ViewController;
+
+@protocol ViewControllerDelegate <NSObject>
+
+@optional
+
+- (void)viewController:(ViewController *)controller didPressCalculate:(NSInteger)numberOfBeers;
+
+@end
+
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) id<ViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) UITextField *beerPercentTextField;
 @property (weak, nonatomic) UILabel *resultLabel;

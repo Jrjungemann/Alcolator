@@ -15,6 +15,7 @@
 		2A48B24019DA05F8009E2912 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */; };
 		2A48B24C19DA05F8009E2912 /* CalcaholTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48B24B19DA05F8009E2912 /* CalcaholTests.m */; };
 		2A5F093119DC38B800D15A13 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5F093019DC38B800D15A13 /* MainMenuViewController.m */; };
+		FCF6561619DF71380065C2DA /* AnalyticsResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF6561519DF71380065C2DA /* AnalyticsResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		2A48B24B19DA05F8009E2912 /* CalcaholTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcaholTests.m; sourceTree = "<group>"; };
 		2A5F092F19DC38B800D15A13 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		2A5F093019DC38B800D15A13 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		FCF6561419DF71380065C2DA /* AnalyticsResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsResponder.h; sourceTree = "<group>"; };
+		FCF6561519DF71380065C2DA /* AnalyticsResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsResponder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				2A48B23C19DA05F8009E2912 /* Images.xcassets */,
 				2A48B23E19DA05F8009E2912 /* LaunchScreen.xib */,
 				2A48B22F19DA05F8009E2912 /* Supporting Files */,
+				FCF6561419DF71380065C2DA /* AnalyticsResponder.h */,
+				FCF6561519DF71380065C2DA /* AnalyticsResponder.m */,
 			);
 			path = Calcahol;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				2A48B23519DA05F8009E2912 /* AppDelegate.m in Sources */,
 				2A48B23219DA05F8009E2912 /* main.m in Sources */,
 				2A5F093119DC38B800D15A13 /* MainMenuViewController.m in Sources */,
+				FCF6561619DF71380065C2DA /* AnalyticsResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

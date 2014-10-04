@@ -14,14 +14,26 @@
 
 @implementation WhiskeyViewController
 
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        
+        self.title = NSLocalizedString(@"Whiskey", nil);
+    
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    return self;
+}
+
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+    self.view.backgroundColor = [UIColor colorWithRed:0.992 green:0.992 blue:0.588 alpha:1]; /*#fdfd96*/
 }
 
 - (void)sliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
+    
     
     int beerCount = self.beerCountSlider.value;
     
@@ -88,5 +100,9 @@
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
+    
+    if ([self.delegate respondsToSelector:@selector(viewController:didPressCalculate:)]) {
+        [self.delegate viewController:self didPressCalculate:numberOfBeers];
+    }
 }
 @end
